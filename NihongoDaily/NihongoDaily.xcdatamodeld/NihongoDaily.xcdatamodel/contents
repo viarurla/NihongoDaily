@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
-        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19206" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Kana" representedClassName=".Kana" syncable="YES">
+        <attribute name="appliesToKanji" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="common" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="tags" optional="YES" attributeType="Transformable"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <attribute name="word" optional="YES" attributeType="Transformable"/>
     </entity>
-    <entity name="Word" representedClassName=".Word" syncable="YES" codeGenerationType="class">
-        <attribute name="english" optional="YES" attributeType="String"/>
-        <attribute name="japanese" optional="YES" attributeType="String"/>
+    <entity name="Word" representedClassName=".Word" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="kana" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData"/>
+        <attribute name="kanji" optional="YES" attributeType="Transformable"/>
+        <attribute name="sense" optional="YES" attributeType="Transformable"/>
     </entity>
     <elements>
-        <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
-        <element name="Word" positionX="-63" positionY="-9" width="128" height="59"/>
+        <element name="Word" positionX="-63" positionY="-9" width="128" height="89"/>
+        <element name="Kana" positionX="-45" positionY="9" width="128" height="104"/>
     </elements>
 </model>

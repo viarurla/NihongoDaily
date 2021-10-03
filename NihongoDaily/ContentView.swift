@@ -12,7 +12,7 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Word.english, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \Word.id, ascending: true)],
         animation: .default)
     private var words: FetchedResults<Word>
     

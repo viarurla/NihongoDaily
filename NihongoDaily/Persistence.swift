@@ -8,15 +8,22 @@
 import CoreData
 
 struct PersistenceController {
-    static let shared = PersistenceController()
+    // todo: Uncomment this when a better solution has been ascertained.
+    //static let shared = PersistenceController()
 
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-        }
+
+        // This is kinda terrible, but for now will do. Make a proper set of custom data at a later date.
+        let newWord = Word(context: viewContext)
+        newWord.english = "Hello"
+        newWord.japanese = "おはよう"
+
+        let newWord1 = Word(context: viewContext)
+        newWord1.english = "Goodbye"
+        newWord1.japanese = "さよなら"
+        
         do {
             try viewContext.save()
         } catch {
@@ -27,7 +34,9 @@ struct PersistenceController {
         }
         return result
     }()
-
+    
+    static let shared = preview
+    
     let container: NSPersistentContainer
 
     init(inMemory: Bool = false) {

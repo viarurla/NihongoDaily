@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,22 @@
 		3D0FD1532704D38300ECED8A /* NihongoDaily.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D0FD1512704D38300ECED8A /* NihongoDaily.xcdatamodeld */; };
 		3D0FD15E2704D38300ECED8A /* NihongoDailyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0FD15D2704D38300ECED8A /* NihongoDailyTests.swift */; };
 		3D0FD1692704D38300ECED8A /* NihongoDailyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0FD1682704D38300ECED8A /* NihongoDailyUITests.swift */; };
+		3D0FD17A2704D45300ECED8A /* FlashCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0FD1792704D45300ECED8A /* FlashCardView.swift */; };
+		3D1559632709CF23001632D8 /* KanjiElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1559622709CF23001632D8 /* KanjiElement.swift */; };
+		3D1559652709EEC8001632D8 /* ReadingElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1559642709EEC8001632D8 /* ReadingElement.swift */; };
+		3D1559672709F7BC001632D8 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3D1559662709F7BC001632D8 /* .gitignore */; };
+		3DC81063270880EC00BA4E6B /* JMdict_e.gz in Resources */ = {isa = PBXBuildFile; fileRef = 3DC81062270880EC00BA4E6B /* JMdict_e.gz */; };
+		3DC81064270880EC00BA4E6B /* JMdict_e.gz in Resources */ = {isa = PBXBuildFile; fileRef = 3DC81062270880EC00BA4E6B /* JMdict_e.gz */; };
+		3DC81065270880EC00BA4E6B /* JMdict_e.gz in Resources */ = {isa = PBXBuildFile; fileRef = 3DC81062270880EC00BA4E6B /* JMdict_e.gz */; };
+		3DC8106727089E8400BA4E6B /* CartFile in Resources */ = {isa = PBXBuildFile; fileRef = 3DC8106627089E8400BA4E6B /* CartFile */; };
+		3DC810BC2708A84100BA4E6B /* Gzip.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC810BB2708A84100BA4E6B /* Gzip.xcframework */; };
+		3DC810BD2708A84100BA4E6B /* Gzip.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC810BB2708A84100BA4E6B /* Gzip.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3DC810C02708B49F00BA4E6B /* SwiftyXMLParser.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC810BF2708B49F00BA4E6B /* SwiftyXMLParser.xcframework */; };
+		3DC810C12708B49F00BA4E6B /* SwiftyXMLParser.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC810BF2708B49F00BA4E6B /* SwiftyXMLParser.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3DC810C42708CE2C00BA4E6B /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC810C32708CE2C00BA4E6B /* Entry.swift */; };
+		3DC810C82708D15200BA4E6B /* XMLMapper.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC810C72708D15200BA4E6B /* XMLMapper.xcframework */; };
+		3DC810C92708D15200BA4E6B /* XMLMapper.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC810C72708D15200BA4E6B /* XMLMapper.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3DC810CB2708D4BC00BA4E6B /* Sense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC810CA2708D4BC00BA4E6B /* Sense.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +50,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3DC810BE2708A84100BA4E6B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3DC810C92708D15200BA4E6B /* XMLMapper.xcframework in Embed Frameworks */,
+				3DC810C12708B49F00BA4E6B /* SwiftyXMLParser.xcframework in Embed Frameworks */,
+				3DC810BD2708A84100BA4E6B /* Gzip.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		3D0FD1432704D38100ECED8A /* NihongoDaily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NihongoDaily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D0FD1462704D38100ECED8A /* NihongoDailyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NihongoDailyApp.swift; sourceTree = "<group>"; };
@@ -49,6 +81,17 @@
 		3D0FD1642704D38300ECED8A /* NihongoDailyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NihongoDailyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D0FD1682704D38300ECED8A /* NihongoDailyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NihongoDailyUITests.swift; sourceTree = "<group>"; };
 		3D0FD16A2704D38300ECED8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D0FD1792704D45300ECED8A /* FlashCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardView.swift; sourceTree = "<group>"; };
+		3D1559622709CF23001632D8 /* KanjiElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiElement.swift; sourceTree = "<group>"; };
+		3D1559642709EEC8001632D8 /* ReadingElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingElement.swift; sourceTree = "<group>"; };
+		3D1559662709F7BC001632D8 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		3DC81062270880EC00BA4E6B /* JMdict_e.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = JMdict_e.gz; sourceTree = "<group>"; };
+		3DC8106627089E8400BA4E6B /* CartFile */ = {isa = PBXFileReference; lastKnownFileType = text; path = CartFile; sourceTree = "<group>"; };
+		3DC810BB2708A84100BA4E6B /* Gzip.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Gzip.xcframework; path = NihongoDaily/Carthage/Build/Gzip.xcframework; sourceTree = "<group>"; };
+		3DC810BF2708B49F00BA4E6B /* SwiftyXMLParser.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SwiftyXMLParser.xcframework; path = NihongoDaily/Carthage/Build/SwiftyXMLParser.xcframework; sourceTree = "<group>"; };
+		3DC810C32708CE2C00BA4E6B /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		3DC810C72708D15200BA4E6B /* XMLMapper.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = XMLMapper.xcframework; path = NihongoDaily/Carthage/Build/XMLMapper.xcframework; sourceTree = "<group>"; };
+		3DC810CA2708D4BC00BA4E6B /* Sense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sense.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +99,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DC810C82708D15200BA4E6B /* XMLMapper.xcframework in Frameworks */,
+				3DC810C02708B49F00BA4E6B /* SwiftyXMLParser.xcframework in Frameworks */,
+				3DC810BC2708A84100BA4E6B /* Gzip.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,10 +125,12 @@
 		3D0FD13A2704D38100ECED8A = {
 			isa = PBXGroup;
 			children = (
+				3D1559662709F7BC001632D8 /* .gitignore */,
 				3D0FD1452704D38100ECED8A /* NihongoDaily */,
 				3D0FD15C2704D38300ECED8A /* NihongoDailyTests */,
 				3D0FD1672704D38300ECED8A /* NihongoDailyUITests */,
 				3D0FD1442704D38100ECED8A /* Products */,
+				3DC810682708A47500BA4E6B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +147,11 @@
 		3D0FD1452704D38100ECED8A /* NihongoDaily */ = {
 			isa = PBXGroup;
 			children = (
+				3DC8106627089E8400BA4E6B /* CartFile */,
+				3DC81061270880EC00BA4E6B /* Resources */,
+				3D1DF5F22704FF57007A3FC7 /* Protocols */,
+				3D0FD17B2704D4AB00ECED8A /* Models */,
+				3D0FD1762704D3D300ECED8A /* Views */,
 				3D0FD1462704D38100ECED8A /* NihongoDailyApp.swift */,
 				3D0FD1482704D38100ECED8A /* ContentView.swift */,
 				3D0FD14A2704D38200ECED8A /* Assets.xcassets */,
@@ -136,6 +189,58 @@
 			path = NihongoDailyUITests;
 			sourceTree = "<group>";
 		};
+		3D0FD1762704D3D300ECED8A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3D0FD1792704D45300ECED8A /* FlashCardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3D0FD17B2704D4AB00ECED8A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3DC810C22708CE0100BA4E6B /* XmlModels */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3D1DF5F22704FF57007A3FC7 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		3DC81061270880EC00BA4E6B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3DC81062270880EC00BA4E6B /* JMdict_e.gz */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3DC810682708A47500BA4E6B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DC810C72708D15200BA4E6B /* XMLMapper.xcframework */,
+				3DC810BF2708B49F00BA4E6B /* SwiftyXMLParser.xcframework */,
+				3DC810BB2708A84100BA4E6B /* Gzip.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3DC810C22708CE0100BA4E6B /* XmlModels */ = {
+			isa = PBXGroup;
+			children = (
+				3DC810C32708CE2C00BA4E6B /* Entry.swift */,
+				3DC810CA2708D4BC00BA4E6B /* Sense.swift */,
+				3D1559622709CF23001632D8 /* KanjiElement.swift */,
+				3D1559642709EEC8001632D8 /* ReadingElement.swift */,
+			);
+			path = XmlModels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +251,7 @@
 				3D0FD13F2704D38100ECED8A /* Sources */,
 				3D0FD1402704D38100ECED8A /* Frameworks */,
 				3D0FD1412704D38100ECED8A /* Resources */,
+				3DC810BE2708A84100BA4E6B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -198,6 +304,9 @@
 		3D0FD13B2704D38100ECED8A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					JMdict_e,
+				);
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
@@ -239,7 +348,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D1559672709F7BC001632D8 /* .gitignore in Resources */,
 				3D0FD14E2704D38200ECED8A /* Preview Assets.xcassets in Resources */,
+				3DC81063270880EC00BA4E6B /* JMdict_e.gz in Resources */,
+				3DC8106727089E8400BA4E6B /* CartFile in Resources */,
 				3D0FD14B2704D38200ECED8A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,6 +360,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DC81064270880EC00BA4E6B /* JMdict_e.gz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +368,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DC81065270880EC00BA4E6B /* JMdict_e.gz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,10 +379,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DC810C42708CE2C00BA4E6B /* Entry.swift in Sources */,
 				3D0FD1502704D38200ECED8A /* Persistence.swift in Sources */,
 				3D0FD1492704D38100ECED8A /* ContentView.swift in Sources */,
+				3DC810CB2708D4BC00BA4E6B /* Sense.swift in Sources */,
+				3D1559632709CF23001632D8 /* KanjiElement.swift in Sources */,
 				3D0FD1532704D38300ECED8A /* NihongoDaily.xcdatamodeld in Sources */,
 				3D0FD1472704D38100ECED8A /* NihongoDailyApp.swift in Sources */,
+				3D1559652709EEC8001632D8 /* ReadingElement.swift in Sources */,
+				3D0FD17A2704D45300ECED8A /* FlashCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +548,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"NihongoDaily/Preview Content\"";
 				DEVELOPMENT_TEAM = PU3UCL95VU;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NihongoDaily/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = NihongoDaily/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -438,7 +561,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Metis.NihongoDaily;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -451,6 +574,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"NihongoDaily/Preview Content\"";
 				DEVELOPMENT_TEAM = PU3UCL95VU;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NihongoDaily/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = NihongoDaily/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -460,7 +587,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Metis.NihongoDaily;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -471,6 +598,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PU3UCL95VU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NihongoDaily/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = NihongoDailyTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -493,6 +624,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PU3UCL95VU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NihongoDaily/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = NihongoDailyTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (

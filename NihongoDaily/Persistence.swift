@@ -14,15 +14,6 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-
-        // This is kinda terrible, but for now will do. Make a proper set of custom data at a later date.
-        let newWord = Word(context: viewContext)
-        newWord.english = "Hello"
-        newWord.japanese = "おはよう"
-
-        let newWord1 = Word(context: viewContext)
-        newWord1.english = "Goodbye"
-        newWord1.japanese = "さよなら"
         
         do {
             try viewContext.save()
@@ -33,6 +24,12 @@ struct PersistenceController {
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
         return result
+    }()
+    
+    static var DatabaseManager: DbManager = {
+        var dbm = DbManager()
+        dbm.startup()
+        return dbm
     }()
     
     static let shared = preview

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct FlashCardView: View {
     
-    var wordToDisplay: Word?
     
     var body: some View {
         ZStack {
@@ -18,13 +17,7 @@ struct FlashCardView: View {
                 .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
             
             VStack {
-                Text((wordToDisplay?.japanese)!)
-                    .font(.largeTitle)
-                    .foregroundColor(.black)
-
-                Text((wordToDisplay?.english)!)
-                    .font(.title)
-                    .foregroundColor(.gray)
+                Text("Placeholder")
             }
             .padding(20)
             .multilineTextAlignment(.center)
@@ -34,15 +27,8 @@ struct FlashCardView: View {
 }
 
 struct FlashCardView_Previews: PreviewProvider {
-    
-    static var word : Word =  {
-        var lazyWord = Word(context: PersistenceController.shared.container.viewContext)
-        lazyWord.english = "Hello!"
-        lazyWord.japanese = "おはよう！"
-        return lazyWord
-    }()
-    
+
     static var previews: some View {
-        FlashCardView(wordToDisplay: word)
+        FlashCardView()
     }
 }

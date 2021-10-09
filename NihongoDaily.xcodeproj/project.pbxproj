@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,25 +12,15 @@
 		3D0FD14B2704D38200ECED8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D0FD14A2704D38200ECED8A /* Assets.xcassets */; };
 		3D0FD14E2704D38200ECED8A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D0FD14D2704D38200ECED8A /* Preview Assets.xcassets */; };
 		3D0FD1502704D38200ECED8A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0FD14F2704D38200ECED8A /* Persistence.swift */; };
-		3D0FD1532704D38300ECED8A /* NihongoDaily.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D0FD1512704D38300ECED8A /* NihongoDaily.xcdatamodeld */; };
 		3D0FD15E2704D38300ECED8A /* NihongoDailyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0FD15D2704D38300ECED8A /* NihongoDailyTests.swift */; };
 		3D0FD1692704D38300ECED8A /* NihongoDailyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0FD1682704D38300ECED8A /* NihongoDailyUITests.swift */; };
 		3D0FD17A2704D45300ECED8A /* FlashCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0FD1792704D45300ECED8A /* FlashCardView.swift */; };
-		3D1559632709CF23001632D8 /* KanjiElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1559622709CF23001632D8 /* KanjiElement.swift */; };
-		3D1559652709EEC8001632D8 /* ReadingElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1559642709EEC8001632D8 /* ReadingElement.swift */; };
-		3D1559672709F7BC001632D8 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 3D1559662709F7BC001632D8 /* .gitignore */; };
-		3DC81063270880EC00BA4E6B /* JMdict_e.gz in Resources */ = {isa = PBXBuildFile; fileRef = 3DC81062270880EC00BA4E6B /* JMdict_e.gz */; };
-		3DC81064270880EC00BA4E6B /* JMdict_e.gz in Resources */ = {isa = PBXBuildFile; fileRef = 3DC81062270880EC00BA4E6B /* JMdict_e.gz */; };
-		3DC81065270880EC00BA4E6B /* JMdict_e.gz in Resources */ = {isa = PBXBuildFile; fileRef = 3DC81062270880EC00BA4E6B /* JMdict_e.gz */; };
-		3DC8106727089E8400BA4E6B /* CartFile in Resources */ = {isa = PBXBuildFile; fileRef = 3DC8106627089E8400BA4E6B /* CartFile */; };
-		3DC810BC2708A84100BA4E6B /* Gzip.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC810BB2708A84100BA4E6B /* Gzip.xcframework */; };
-		3DC810BD2708A84100BA4E6B /* Gzip.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC810BB2708A84100BA4E6B /* Gzip.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3DC810C02708B49F00BA4E6B /* SwiftyXMLParser.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC810BF2708B49F00BA4E6B /* SwiftyXMLParser.xcframework */; };
-		3DC810C12708B49F00BA4E6B /* SwiftyXMLParser.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC810BF2708B49F00BA4E6B /* SwiftyXMLParser.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3DC810C42708CE2C00BA4E6B /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC810C32708CE2C00BA4E6B /* Entry.swift */; };
-		3DC810C82708D15200BA4E6B /* XMLMapper.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC810C72708D15200BA4E6B /* XMLMapper.xcframework */; };
-		3DC810C92708D15200BA4E6B /* XMLMapper.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3DC810C72708D15200BA4E6B /* XMLMapper.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3DC810CB2708D4BC00BA4E6B /* Sense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC810CA2708D4BC00BA4E6B /* Sense.swift */; };
+		3D15598F270A3FD2001632D8 /* NihongoDaily.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D15598D270A3FD2001632D8 /* NihongoDaily.xcdatamodeld */; };
+		3DCB11FE2710DF150053DA4C /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB11FD2710DF140053DA4C /* Entry.swift */; };
+		3DCB12002710E0660053DA4C /* DbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB11FF2710E0660053DA4C /* DbManager.swift */; };
+		3DCB12022710E1010053DA4C /* JMdict.db in Resources */ = {isa = PBXBuildFile; fileRef = 3DCB12012710E1010053DA4C /* JMdict.db */; };
+		3DCB12042711F9240053DA4C /* EntryListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB12032711F9240053DA4C /* EntryListItemView.swift */; };
+		3DCB12062711FC7C0053DA4C /* EntryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB12052711FC7B0053DA4C /* EntryListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,22 +40,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		3DC810BE2708A84100BA4E6B /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				3DC810C92708D15200BA4E6B /* XMLMapper.xcframework in Embed Frameworks */,
-				3DC810C12708B49F00BA4E6B /* SwiftyXMLParser.xcframework in Embed Frameworks */,
-				3DC810BD2708A84100BA4E6B /* Gzip.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		3D0FD1432704D38100ECED8A /* NihongoDaily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NihongoDaily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D0FD1462704D38100ECED8A /* NihongoDailyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NihongoDailyApp.swift; sourceTree = "<group>"; };
@@ -73,7 +47,6 @@
 		3D0FD14A2704D38200ECED8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D0FD14D2704D38200ECED8A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3D0FD14F2704D38200ECED8A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		3D0FD1522704D38300ECED8A /* NihongoDaily.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NihongoDaily.xcdatamodel; sourceTree = "<group>"; };
 		3D0FD1542704D38300ECED8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D0FD1592704D38300ECED8A /* NihongoDailyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NihongoDailyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D0FD15D2704D38300ECED8A /* NihongoDailyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NihongoDailyTests.swift; sourceTree = "<group>"; };
@@ -82,16 +55,14 @@
 		3D0FD1682704D38300ECED8A /* NihongoDailyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NihongoDailyUITests.swift; sourceTree = "<group>"; };
 		3D0FD16A2704D38300ECED8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D0FD1792704D45300ECED8A /* FlashCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardView.swift; sourceTree = "<group>"; };
-		3D1559622709CF23001632D8 /* KanjiElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiElement.swift; sourceTree = "<group>"; };
-		3D1559642709EEC8001632D8 /* ReadingElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingElement.swift; sourceTree = "<group>"; };
 		3D1559662709F7BC001632D8 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		3DC81062270880EC00BA4E6B /* JMdict_e.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = JMdict_e.gz; sourceTree = "<group>"; };
+		3D15598E270A3FD2001632D8 /* NihongoDaily.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NihongoDaily.xcdatamodel; sourceTree = "<group>"; };
 		3DC8106627089E8400BA4E6B /* CartFile */ = {isa = PBXFileReference; lastKnownFileType = text; path = CartFile; sourceTree = "<group>"; };
-		3DC810BB2708A84100BA4E6B /* Gzip.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Gzip.xcframework; path = NihongoDaily/Carthage/Build/Gzip.xcframework; sourceTree = "<group>"; };
-		3DC810BF2708B49F00BA4E6B /* SwiftyXMLParser.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SwiftyXMLParser.xcframework; path = NihongoDaily/Carthage/Build/SwiftyXMLParser.xcframework; sourceTree = "<group>"; };
-		3DC810C32708CE2C00BA4E6B /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
-		3DC810C72708D15200BA4E6B /* XMLMapper.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = XMLMapper.xcframework; path = NihongoDaily/Carthage/Build/XMLMapper.xcframework; sourceTree = "<group>"; };
-		3DC810CA2708D4BC00BA4E6B /* Sense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sense.swift; sourceTree = "<group>"; };
+		3DCB11FD2710DF140053DA4C /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		3DCB11FF2710E0660053DA4C /* DbManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbManager.swift; sourceTree = "<group>"; };
+		3DCB12012710E1010053DA4C /* JMdict.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = JMdict.db; path = "../../../GitHub/jmdict-to-sqlite3/JMdict.db"; sourceTree = "<group>"; };
+		3DCB12032711F9240053DA4C /* EntryListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListItemView.swift; sourceTree = "<group>"; };
+		3DCB12052711FC7B0053DA4C /* EntryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DC810C82708D15200BA4E6B /* XMLMapper.xcframework in Frameworks */,
-				3DC810C02708B49F00BA4E6B /* SwiftyXMLParser.xcframework in Frameworks */,
-				3DC810BC2708A84100BA4E6B /* Gzip.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,8 +115,10 @@
 		3D0FD1452704D38100ECED8A /* NihongoDaily */ = {
 			isa = PBXGroup;
 			children = (
+				3DCB12012710E1010053DA4C /* JMdict.db */,
+				3D15598D270A3FD2001632D8 /* NihongoDaily.xcdatamodeld */,
+				3D1559682709FCBD001632D8 /* Utilities */,
 				3DC8106627089E8400BA4E6B /* CartFile */,
-				3DC81061270880EC00BA4E6B /* Resources */,
 				3D1DF5F22704FF57007A3FC7 /* Protocols */,
 				3D0FD17B2704D4AB00ECED8A /* Models */,
 				3D0FD1762704D3D300ECED8A /* Views */,
@@ -157,7 +127,6 @@
 				3D0FD14A2704D38200ECED8A /* Assets.xcassets */,
 				3D0FD14F2704D38200ECED8A /* Persistence.swift */,
 				3D0FD1542704D38300ECED8A /* Info.plist */,
-				3D0FD1512704D38300ECED8A /* NihongoDaily.xcdatamodeld */,
 				3D0FD14C2704D38200ECED8A /* Preview Content */,
 			);
 			path = NihongoDaily;
@@ -193,6 +162,8 @@
 			isa = PBXGroup;
 			children = (
 				3D0FD1792704D45300ECED8A /* FlashCardView.swift */,
+				3DCB12032711F9240053DA4C /* EntryListItemView.swift */,
+				3DCB12052711FC7B0053DA4C /* EntryListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,9 +171,17 @@
 		3D0FD17B2704D4AB00ECED8A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3DC810C22708CE0100BA4E6B /* XmlModels */,
+				3DCB11FD2710DF140053DA4C /* Entry.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		3D1559682709FCBD001632D8 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3DCB11FF2710E0660053DA4C /* DbManager.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		3D1DF5F22704FF57007A3FC7 /* Protocols */ = {
@@ -212,33 +191,11 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		3DC81061270880EC00BA4E6B /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				3DC81062270880EC00BA4E6B /* JMdict_e.gz */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		3DC810682708A47500BA4E6B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3DC810C72708D15200BA4E6B /* XMLMapper.xcframework */,
-				3DC810BF2708B49F00BA4E6B /* SwiftyXMLParser.xcframework */,
-				3DC810BB2708A84100BA4E6B /* Gzip.xcframework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		3DC810C22708CE0100BA4E6B /* XmlModels */ = {
-			isa = PBXGroup;
-			children = (
-				3DC810C32708CE2C00BA4E6B /* Entry.swift */,
-				3DC810CA2708D4BC00BA4E6B /* Sense.swift */,
-				3D1559622709CF23001632D8 /* KanjiElement.swift */,
-				3D1559642709EEC8001632D8 /* ReadingElement.swift */,
-			);
-			path = XmlModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,7 +208,6 @@
 				3D0FD13F2704D38100ECED8A /* Sources */,
 				3D0FD1402704D38100ECED8A /* Frameworks */,
 				3D0FD1412704D38100ECED8A /* Resources */,
-				3DC810BE2708A84100BA4E6B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -348,10 +304,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D1559672709F7BC001632D8 /* .gitignore in Resources */,
+				3DCB12022710E1010053DA4C /* JMdict.db in Resources */,
 				3D0FD14E2704D38200ECED8A /* Preview Assets.xcassets in Resources */,
-				3DC81063270880EC00BA4E6B /* JMdict_e.gz in Resources */,
-				3DC8106727089E8400BA4E6B /* CartFile in Resources */,
 				3D0FD14B2704D38200ECED8A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,7 +314,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DC81064270880EC00BA4E6B /* JMdict_e.gz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,7 +321,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DC81065270880EC00BA4E6B /* JMdict_e.gz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,14 +331,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DC810C42708CE2C00BA4E6B /* Entry.swift in Sources */,
+				3DCB12002710E0660053DA4C /* DbManager.swift in Sources */,
+				3DCB11FE2710DF150053DA4C /* Entry.swift in Sources */,
+				3DCB12042711F9240053DA4C /* EntryListItemView.swift in Sources */,
 				3D0FD1502704D38200ECED8A /* Persistence.swift in Sources */,
 				3D0FD1492704D38100ECED8A /* ContentView.swift in Sources */,
-				3DC810CB2708D4BC00BA4E6B /* Sense.swift in Sources */,
-				3D1559632709CF23001632D8 /* KanjiElement.swift in Sources */,
-				3D0FD1532704D38300ECED8A /* NihongoDaily.xcdatamodeld in Sources */,
+				3DCB12062711FC7C0053DA4C /* EntryListView.swift in Sources */,
+				3D15598F270A3FD2001632D8 /* NihongoDaily.xcdatamodeld in Sources */,
 				3D0FD1472704D38100ECED8A /* NihongoDailyApp.swift in Sources */,
-				3D1559652709EEC8001632D8 /* ReadingElement.swift in Sources */,
 				3D0FD17A2704D45300ECED8A /* FlashCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -548,10 +500,6 @@
 				DEVELOPMENT_ASSET_PATHS = "\"NihongoDaily/Preview Content\"";
 				DEVELOPMENT_TEAM = PU3UCL95VU;
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/NihongoDaily/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = NihongoDaily/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -574,10 +522,6 @@
 				DEVELOPMENT_ASSET_PATHS = "\"NihongoDaily/Preview Content\"";
 				DEVELOPMENT_TEAM = PU3UCL95VU;
 				ENABLE_PREVIEWS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/NihongoDaily/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = NihongoDaily/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -598,10 +542,6 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PU3UCL95VU;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/NihongoDaily/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = NihongoDailyTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -624,10 +564,6 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PU3UCL95VU;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/NihongoDaily/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = NihongoDailyTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -725,12 +661,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		3D0FD1512704D38300ECED8A /* NihongoDaily.xcdatamodeld */ = {
+		3D15598D270A3FD2001632D8 /* NihongoDaily.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				3D0FD1522704D38300ECED8A /* NihongoDaily.xcdatamodel */,
+				3D15598E270A3FD2001632D8 /* NihongoDaily.xcdatamodel */,
 			);
-			currentVersion = 3D0FD1522704D38300ECED8A /* NihongoDaily.xcdatamodel */;
+			currentVersion = 3D15598E270A3FD2001632D8 /* NihongoDaily.xcdatamodel */;
 			path = NihongoDaily.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

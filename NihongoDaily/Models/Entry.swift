@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Entry {
+struct Entry : Identifiable {
     
     var id: Int?
     var kanji: String?

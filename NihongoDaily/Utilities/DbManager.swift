@@ -26,6 +26,35 @@ struct DbManager {
         database = db!
     }
     
+    func getEntryById(id: Int) -> Entry {
+        var queryStatement: OpaquePointer?
+        let queryStatementString = "SELECT id, kanji, reading, gloss, position FROM entry WHERE id = \(id);"
+        
+        
+        if sqlite3_prepare_v2(database, queryStatementString, -1, &queryStatement, nil) ==
+            SQLITE_OK {
+            
+            var entry: Entry = Entry()
+            
+            if sqlite3_step(queryStatement) == SQLITE_ROW {
+                                
+                entry.id = Int(sqlite3_column_int(queryStatement, 0))
+                entry.kanji = String(cString:sqlite3_column_text(queryStatement, 1))
+                entry.reading = String(cString:sqlite3_column_text(queryStatement, 2))
+                entry.gloss = String(cString:sqlite3_column_text(queryStatement, 3))
+                entry.position = String(cString:sqlite3_column_text(queryStatement, 4))
+                
+              
+            }
+            return entry
+        } else {
+            let errorMessage = String(cString: sqlite3_errmsg(database))
+            print("\nQuery is not prepared \(errorMessage)")
+        }
+        sqlite3_finalize(queryStatement)
+        return Entry()
+    }
+    
     func getEntries() -> [Entry] {
         var queryStatement: OpaquePointer?
         let queryStatementString = "SELECT id, kanji, reading, gloss, position FROM entry;"

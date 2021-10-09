@@ -11,17 +11,21 @@ import CoreData
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Word.id, ascending: true)],
-        animation: .default)
-    private var words: FetchedResults<Word>
-    
+//    @FetchRequest(
+//        sortDescriptors: [NSSortDescriptor(keyPath: \Word.id, ascending: true)],
+//        animation: .default)
+//    private var words: FetchedResults<Word>
+    var entries = PersistenceController.DatabaseManager.getEntries()
     var body: some View {
         VStack {
             Text("The word of the day is")
                 .font(.largeTitle)
                 .bold()
-            FlashCardView(wordToDisplay: words[0])}
+            Text(entries[120].kanji!)
+                .font(.largeTitle)
+            //FlashCardView()
+            
+        }
             .toolbar {
                 #if os(iOS)
                 EditButton()

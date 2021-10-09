@@ -20,9 +20,12 @@ class NihongoDailyTests: XCTestCase {
     }
 
     func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        
+        let fileUrl = Bundle.main.url(forResource: "jmdict-eng-3.1.0", withExtension: "json")!
+        let fileContents = try? String(contentsOf: fileUrl)
+        let data = Data(fileContents!.utf8)
+        let json = try? JSONSerialization.jsonObject(with: data, options: [])
+        print(json)
+
     }
 
     func testPerformanceExample() throws {

@@ -20,12 +20,17 @@ class NihongoDailyTests: XCTestCase {
     }
 
     func testExample() throws {
-        let fileUrl = Bundle.main.url(forResource: "jmdict-eng-3.1.0", withExtension: "json")!
-        let fileContents = try? String(contentsOf: fileUrl)
-        let data = Data(fileContents!.utf8)
-        let json = try? JSONSerialization.jsonObject(with: data, options: [])
-        print(json)
+        var eManager: EntryManager = EntryManager()
+        var entries: [Entry] = eManager.getEntries()
+        
+        var kManager: KanjiManager = KanjiManager()
+        var kanjiArray = kManager.getKanjiByEntryId(entryId: 1775880)
+        
+        var kaManager: KanaManager = KanaManager()
+        var kanaArray = kaManager.getKanaByEntryId(entryId: 1775880)
 
+        var seManager: SenseManager = SenseManager()
+        var senses = seManager.getSenseByEntryId(entryId: 1775880)
     }
 
     func testPerformanceExample() throws {

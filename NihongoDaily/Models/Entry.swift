@@ -10,9 +10,7 @@ import Foundation
 struct Entry : Identifiable {
     
     var id: Int?
-    var kanji: String?
-    var reading: String?
-    var gloss: String?
-    var position: String?
-    
+    var kanji: Kana?
+    var kana: Sense?
+    var sense: Sense?
 }

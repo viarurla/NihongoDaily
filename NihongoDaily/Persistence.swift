@@ -10,7 +10,7 @@ import SQLite
 
 struct PersistenceController {
     // todo: Uncomment this when a better solution has been ascertained.
-    //static let shared = PersistenceController()
+    static let shared = PersistenceController()
 
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
@@ -27,15 +27,13 @@ struct PersistenceController {
         return result
     }()
     
-//    static var DatabaseManager: DbManager = {
-//        var dbm = DbManager()
-//        dbm.startup()
-//        return dbm
-//    }()
+    static var DatabaseManager: DbManager = {
+        var dbm = DbManager()
+        dbm.startup()
+        return dbm
+    }()
     
-    static var entryDatabase = try Connection(Bundle.main.url(forResource: "JMdict_e", withExtension: "db")!.path)
-    
-    static let shared = preview
+    //static let shared = preview
     
     let container: NSPersistentContainer
 

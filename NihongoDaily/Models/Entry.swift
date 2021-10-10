@@ -10,7 +10,7 @@ import Foundation
 struct Entry : Identifiable {
     
     var id: Int?
-    var kanji: Kana?
-    var kana: Sense?
-    var sense: Sense?
+    var kanji: [Kanji]?
+    var kana: [Kana]?
+    var sense: [Sense]?
 }

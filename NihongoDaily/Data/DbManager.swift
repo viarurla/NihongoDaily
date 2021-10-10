@@ -6,24 +6,23 @@
 //
 
 import Foundation
-import SQLite3
+import SQLite
 
 struct DbManager {
     
-    var database: OpaquePointer?
+    var database: Connection?
     
     mutating func startup() {
-        let fileURL = Bundle.main.url(forResource: "JMdict_e", withExtension: "db")!
-        
-        // open database
-        var db: OpaquePointer?
-        guard sqlite3_open(fileURL.path, &db) == SQLITE_OK else {
-            print("error opening database")
-            sqlite3_close(db)
-            db = nil
-            return
+        do {
+            let fileURL = Bundle.main.url(forResource: "JMdict_e", withExtension: "db")!
+            
+            // open database
+            let db = try Connection(fileURL.path)
+
+            database = db
+        } catch {
+            
         }
-        database = db!
     }
 
     

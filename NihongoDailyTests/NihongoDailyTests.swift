@@ -20,23 +20,41 @@ class NihongoDailyTests: XCTestCase {
     }
 
     func testExample() throws {
-        var eManager: EntryManager = EntryManager()
-        var entries: [Entry] = eManager.getEntries()
+        let eManager: EntryManager = EntryManager()
+        let entries: [Entry] = eManager.getEntries()
+        print(entries.count)
         
-        var kManager: KanjiManager = KanjiManager()
-        var kanjiArray = kManager.getKanjiByEntryId(entryId: 1775880)
+        let kManager: KanjiManager = KanjiManager()
+        let kanjiArray = kManager.getKanjiByEntryId(entryId: 1775880)
+        print(kanjiArray.count)
         
-        var kaManager: KanaManager = KanaManager()
-        var kanaArray = kaManager.getKanaByEntryId(entryId: 1775880)
+        let kaManager: KanaManager = KanaManager()
+        let kanaArray = kaManager.getKanaByEntryId(entryId: 1775880)
+        print(kanaArray.count)
 
-        var seManager: SenseManager = SenseManager()
-        var senses = seManager.getSenseByEntryId(entryId: 1775880)
+        let seManager: SenseManager = SenseManager()
+        let senses = seManager.getSenseByEntryId(entryId: 1775880)
+        //print(senses.count)
     }
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+            var eManager = EntryManager()
+            var kanjiManager = KanjiManager()
+            var kanaManager = KanaManager()
+            var senseManager = SenseManager()
+            
+            var entries: [Entry] = eManager.getEntries()
+            var processedEntries = [Entry]()
+            
+            for entry in entries[0...100] {
+                var processedEntry = Entry()
+                processedEntry.kanji = kanjiManager.getKanjiByEntryId(entryId: entry.id!)
+                processedEntry.kana = kanaManager.getKanaByEntryId(entryId: entry.id!)
+                processedEntry.sense = senseManager.getSenseByEntryId(entryId: entry.id!)
+                //print("Processed entry with ID: \(entry.id!)")
+                processedEntries.append(processedEntry)
+            
         }
     }
 

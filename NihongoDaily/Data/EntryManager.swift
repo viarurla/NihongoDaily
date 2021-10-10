@@ -10,15 +10,18 @@ import SQLite
 
 struct EntryManager {
     
-    var db = PersistenceController.entryDatabase
+    var db = PersistenceController.DatabaseManager.database
+    
+    let entryTable: Table = Table("entry")
+    let entryId = Expression<Int>("id")
     
     func getEntries() -> [Entry] {
         
         var entries: [Entry] = []
         do {
-            for row in try db.prepare("SELECT id FROM entry;") {
+            for row in try db!.prepare(entryTable) {
                 var entry: Entry = Entry()
-                entry.id = Int(row["id"])
+                entry.id = Int(row[entryId])
                 entries.append(entry)
             }
             

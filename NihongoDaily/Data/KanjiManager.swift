@@ -6,66 +6,65 @@
 //
 
 import Foundation
-import SQLite3
+import SQLite
 
 struct KanjiManager {
-    var db = PersistenceController.entryDatabase
+    var db = PersistenceController.DatabaseManager.database
+    let tm = TableManager()
     
     func getKanjiByEntryId(entryId: Int) -> [Kanji] {
-        
-        let queryString = """
-            select
-                k.id as id,
-                k.value as value,
-                kc.id as commonId,
-                kc.kanji_id as kanjiId,
-                kc.value as commonValue
-            from kanji k
-            inner join kanji_tags kt on k.id = kt.kanji_id
-            inner join kanji_common kc on k.id = kc.kanji_id
-            where k.entry_id = \(entryId)
-        """
-        
+        do {
         var kanjiArray: [Kanji] = []
         
-        for row in try db.prepare(queryString) {
+        for row in try db!.prepare(
+            tm.kanjiTable
+                .filter(tm.entryId == entryId)
+                .join(.leftOuter, tm.kanjiCommonTable, on: tm.kanjiTable[tm.id] == tm.kanjiCommonTable[tm.kanjiId]))
+            {
             
             var kanji: Kanji = Kanji()
-            kanji.id = row["id"]
-            kanji.value = row["value"]
-            kanji.tags = getTags(kanji: kanji)
+            kanji.id = row[tm.kanjiTable[tm.id]]
+            kanji.value = row[tm.kanjiTable[tm.stringValue]]
+//            kanji.tags = getTags(kanji: kanji)
+            if row[tm.kanjiCommonTable[tm.unsafeId]] != nil {
             kanji.common = KanjiCommon(
-                id: row["commonId"],
-                kanjiId: row["kanjiId"],
-                value: row["commonId"]
+                id: row[tm.kanjiCommonTable[tm.id]],
+                kanjiId: row[tm.kanjiId],
+                value: row[tm.kanjiCommonTable[tm.stringValue]] ?? ""
             )
+                
+            }
             kanjiArray.append(kanji)
             
         }
+        return kanjiArray
+        } catch {
+            return []
+        }
     }
     
-    private func getTags(kanji: Kanji) -> [KanjiTag] {
-        let queryString: String = """
-            select
-                kt.id as id,
-                kt.value as value,
-            from kanji_tags kt
-            where kt.kanji_id = \(kanji.id)
-        """
-        
-        var kanjiTags: [KanjiTag] = []
-        
-        for row in try db.prepare(queryString) {
-            
-            var kanjiTag = KanjiTag (
-                id: row["id"],
-                value: row["value"]
-            )
-            kanjiTags.append(kanjiTag)
-        }
-        
-        return kanjiTags
-        
-    }
+//    private func getTags(kanji: Kanji) -> [KanjiTag] {
+//        let queryString: String = """
+//            select
+//                kt.id as id,
+//                kt.value as value,
+//            from kanji_tags kt
+//            where kt.kanji_id = \(kanji.id)
+//        """
+//
+//        var kanjiTags: [KanjiTag] = []
+//
+//        for row in try db.prepare(queryString) {
+//
+//            var kanjiTag = KanjiTag (
+//                id: row["id"],
+//                value: row["value"]
+//            )
+//            kanjiTags.append(kanjiTag)
+//        }
+//
+//        return kanjiTags
+//
+//    }
     
 }

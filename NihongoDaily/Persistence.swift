@@ -6,6 +6,7 @@
 //
 
 import CoreData
+import SQLite
 
 struct PersistenceController {
     // todo: Uncomment this when a better solution has been ascertained.
@@ -26,11 +27,13 @@ struct PersistenceController {
         return result
     }()
     
-    static var DatabaseManager: DbManager = {
-        var dbm = DbManager()
-        dbm.startup()
-        return dbm
-    }()
+//    static var DatabaseManager: DbManager = {
+//        var dbm = DbManager()
+//        dbm.startup()
+//        return dbm
+//    }()
+    
+    static var entryDatabase = try Connection(Bundle.main.url(forResource: "JMdict_e", withExtension: "db")!.path)
     
     static let shared = preview
     

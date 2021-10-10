@@ -9,15 +9,15 @@ import Foundation
 import SQLite3
 
 struct KanaManager {
-    var db = PersistenceController.DatabaseManager.database
+    var db = PersistenceController.entryDatabase
     
     func getKanaByEntryId(entryId: Int) -> [Kana] {
-        var queryStatement: OpaquePointer?
-        let queryStatementString = """
+        
+        let queryString = """
             select
-                k.id,
-                k.entry_id,
-                k.value,
+                k.id as id,
+                k.entry_id as entryId,
+                k.value as value,
                 k.no_kanji,
                 kt.id,
                 kt.value,
@@ -31,38 +31,29 @@ struct KanaManager {
         
         var kanaArray: [Kana] = []
         
-        if sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) ==
-            SQLITE_OK {
+        for row in db.prepare(queryString) {
+            var kana: Kana = Kana()
+            kana.id = row["id"]
+            kana.entryId = row["entryId"]
+            kana.value = row["value"]
             
-            while sqlite3_step(queryStatement) == SQLITE_ROW {
-                
-                var kana: Kana = Kana()
-                kana.id = Int(sqlite3_column_int(queryStatement, 0))
-                kana.entryId = Int(sqlite3_column_int(queryStatement, 1))
-                kana.value = String(cString:sqlite3_column_text(queryStatement, 2))
-                
-                kana.tags = getTags(kana: kana)
-                
-//                kana.common = KanaCommon(
-//                    id: Int(sqlite3_column_int(queryStatement, 6)),
-//                    kanaId: Int(sqlite3_column_int(queryStatement, 7)),
-//                    value: String(cString:sqlite3_column_text(queryStatement, 8))
-//                )
-                kanaArray.append(kana)
-              
-            }
-            return kanaArray
-        } else {
-            let errorMessage = String(cString: sqlite3_errmsg(db))
-            print("\nQuery is not prepared \(errorMessage)")
+            kana.tags = getTags(kana: kana)
+            
+            kana.common = KanaCommon(
+                id: row["kc.id"],
+                kanaId: kana.id,
+                value: row["kc.value"]
+            )
+            kanaArray.append(kana)
+            
         }
-        sqlite3_finalize(queryStatement)
-        return []
+        return kanaArray
     }
     
-    private func getTags(kana: Kana) -> [KanaTag] {
-        var queryStatement: OpaquePointer?
-        let queryStatementString: String = """
+    
+     func getTags(kana: Kana) -> [KanaTag] {
+        
+        let queryString: String = """
             select
                 kt.id,
                 kt.value,
@@ -72,27 +63,17 @@ struct KanaManager {
         
         var kanaTags: [KanaTag] = []
         
-        if sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) ==
-            SQLITE_OK {
+        for row in try db.prepare(queryString) {
+            var kanaTag = KanaTag (
+                id: row["kt.id"],
+                value: row["kt.value"]
+            )
+            kanaTags.append(kanaTag)
             
-            while sqlite3_step(queryStatement) == SQLITE_ROW {
-                
-                var kanaTag = KanaTag (
-                    id: Int(sqlite3_column_int(queryStatement, 0)),
-                    value: String(cString: sqlite3_column_text(queryStatement, 1))
-                )
-                kanaTags.append(kanaTag)
-              
-            }
-            
-            return kanaTags
-            
-        } else {
-            let errorMessage = String(cString: sqlite3_errmsg(db))
-            print("\nQuery is not prepared \(errorMessage)")
         }
-        sqlite3_finalize(queryStatement)
-        return []
+        
+        return kanaTags
+        
     }
-
+    
 }

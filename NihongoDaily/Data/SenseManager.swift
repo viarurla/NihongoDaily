@@ -6,14 +6,17 @@
 //
 
 import Foundation
-import SQLite3
+import SQLite
 
 struct SenseManager {
-    var db = PersistenceController.DatabaseManager.database
+    var db = PersistenceController.entryDatabase
     
     func getSenseByEntryId(entryId: Int) -> [Sense] {
-        var queryStatement: OpaquePointer?
-        let queryStatementString = """
+        
+        let senseTable = Table("Sense")
+        let id = Expression<Int>("id")
+        
+        let queryString = """
             select
                 s.id,
                 s.entry_id,
@@ -36,52 +39,35 @@ struct SenseManager {
         
         var senseArray: [Sense] = []
         
-        if sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) ==
-            SQLITE_OK {
+        for row in db.prepare(queryString) {
+            var sense: Sense = Sense()
+            sense.id = row["s.id"]
+            sense.entryId = Int(row["s.entry_id"])
+            sense.senseInfo = getSenseInfo(sense: sense)
             
-            while sqlite3_step(queryStatement) == SQLITE_ROW {
-
-                var sense: Sense = Sense()
-                sense.id = Int(sqlite3_column_int(queryStatement, 0))
-                sense.entryId = Int(sqlite3_column_int(queryStatement, 1))
-                sense.senseInfo = getSenseInfo(sense: sense)
-                
-                if sqlite3_column_text(queryStatement, 3) != nil
-                {
-                    sense.antonym = Antonym(value:String(cString:sqlite3_column_text(queryStatement, 3)))
-                }
-                
-                if sqlite3_column_text(queryStatement, 8) != nil {
-                    sense.dialect = Dialect(value:String(cString:sqlite3_column_text(queryStatement, 8)))
-                }
-                
-                if sqlite3_column_text(queryStatement, 9) != nil {
-                    sense.partOfSpeech = PartOfSpeech(value:String(cString:sqlite3_column_text(queryStatement, 9)))
-                }
-                
-                sense.langSource = LangSource(
-                    senseId: sense.id!,
-                    origin: String(cString:sqlite3_column_text(queryStatement, 5)),
-                    lang: String(cString:sqlite3_column_text(queryStatement, 4)),
-                    type: String(cString:sqlite3_column_text(queryStatement, 6)),
-                    wasei: String(cString:sqlite3_column_text(queryStatement, 7))
-                )
-                sense.definition = getDefinitions(sense: sense)
-                senseArray.append(sense)
-              
-            }
-            return senseArray
-        } else {
-            let errorMessage = String(cString: sqlite3_errmsg(db))
-            print("\nQuery is not prepared \(errorMessage)")
+            sense.antonym = Antonym(value:row["a.value"])
+            
+            sense.dialect = Dialect(value: row["d.value"])
+            
+            sense.partOfSpeech = PartOfSpeech(value:row["pos.value"])
+            
+            sense.langSource = LangSource(
+                senseId: sense.id!,
+                origin: row["ls.origin"],
+                lang: row["ls.lang"],
+                type: row["ls.type"],
+                wasei: row["ls.wasei"]
+            )
+            sense.definition = getDefinitions(sense: sense)
+            senseArray.append(sense)
+            
         }
-        sqlite3_finalize(queryStatement)
-        return []
+        return senseArray
+        
     }
     
     private func getDefinitions(sense: Sense) -> [Definition] {
-        var queryStatement: OpaquePointer?
-        let queryStatementString: String = """
+        let queryString: String = """
             select
                 d.id,
                 d.value,
@@ -93,34 +79,24 @@ struct SenseManager {
         
         var definitions: [Definition] = []
         
-        if sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) ==
-            SQLITE_OK {
+        for row in try db.prepare(queryString) {
+            var definition = Definition (
+                id: row["d.id"],
+                value: row["d.value"],
+                lang: row["d.lang"],
+                type: row["d.type"]
+            )
+            definitions.append(definition)
             
-            while sqlite3_step(queryStatement) == SQLITE_ROW {
-                
-                var definition = Definition (
-                    id: Int(sqlite3_column_int(queryStatement, 0)),
-                    value: String(cString: sqlite3_column_text(queryStatement, 1)),
-                    lang: String(cString: sqlite3_column_text(queryStatement, 2)),
-                    type: String(cString: sqlite3_column_text(queryStatement, 3))
-                )
-                definitions.append(definition)
-              
-            }
-            
-            return definitions
-            
-        } else {
-            let errorMessage = String(cString: sqlite3_errmsg(db))
-            print("\nQuery is not prepared \(errorMessage)")
         }
-        sqlite3_finalize(queryStatement)
-        return []
+        
+        return definitions
+        
     }
-
+    
+    
     private func getSenseInfo(sense: Sense) -> [SenseInfo] {
-        var queryStatement: OpaquePointer?
-        let queryStatementString: String = """
+        let queryString: String = """
             select
                 si.id,
                 si.value
@@ -130,27 +106,17 @@ struct SenseManager {
         """
         var senseInfoArray: [SenseInfo] = []
         
-        if sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) ==
-            SQLITE_OK {
+        for row in try db.prepare(queryString) {
+            var senseInfo = SenseInfo(
+                id: row["si.id"],
+                value: row["si.value"]
+            )
+            senseInfoArray.append(senseInfo)
             
-            while sqlite3_step(queryStatement) == SQLITE_ROW {
-                
-                var senseInfo = SenseInfo(
-                    id: Int(sqlite3_column_int(queryStatement, 0)),
-                    value: String(cString:sqlite3_column_text(queryStatement, 1))
-                )
-                senseInfoArray.append(senseInfo)
-              
-            }
-            
-            return senseInfoArray
-            
-        } else {
-            let errorMessage = String(cString: sqlite3_errmsg(db))
-            print("\nQuery is not prepared \(errorMessage)")
-        }
-        sqlite3_finalize(queryStatement)
-        return []
+        } 
+        
+        return senseInfoArray
+        
+        
     }
-    
 }

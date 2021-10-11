@@ -40,7 +40,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "07E505D9-15AB-4F92-AAE3-B03B6757F8D9"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NihongoDailyTests/NihongoDailyTests.swift"
@@ -80,6 +80,36 @@
                   startingLineNumber = "25"
                   endingLineNumber = "25"
                   offsetFromSymbolStart = "123">
+               </Location>
+               <Location
+                  uuid = "07E505D9-15AB-4F92-AAE3-B03B6757F8D9 - dd068a87bc2e5878"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NihongoDailyTests.NihongoDailyTests.testExample() throws -&gt; ()"
+                  moduleName = "NihongoDailyTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viarurla/Documents/XcodeProjects/NihongoDaily/NihongoDailyTests/NihongoDailyTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "07E505D9-15AB-4F92-AAE3-B03B6757F8D9 - dd068a87bc2e5878"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NihongoDailyTests.NihongoDailyTests.testExample() throws -&gt; ()"
+                  moduleName = "NihongoDailyTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/viarurla/Documents/XcodeProjects/NihongoDaily/NihongoDailyTests/NihongoDailyTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "165">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -142,40 +172,8 @@
             filePath = "NihongoDailyTests/NihongoDailyTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "testExample()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "016834F3-AD1F-4B9B-8A2C-68A7293146DE"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NihongoDailyTests/NihongoDailyTests.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "testExample()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EABC29A9-87A2-42B0-BF4D-BF3A6C2DC130"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NihongoDailyTests/NihongoDailyTests.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "testExample()"
             landmarkType = "7">
          </BreakpointContent>
@@ -193,22 +191,6 @@
             startingLineNumber = "49"
             endingLineNumber = "49"
             landmarkName = "getSenseByEntryId(entryId:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3D54FB9E-25C2-4FCA-9A5E-062E85CBF487"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NihongoDailyTests/NihongoDailyTests.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "testPerformanceExample()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

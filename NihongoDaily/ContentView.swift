@@ -16,15 +16,15 @@ struct ContentView: View {
 //        sortDescriptors: [NSSortDescriptor(keyPath: \Word.id, ascending: true)],
 //        animation: .default)
 //    private var words: FetchedResults<Word>
-    //var entries = PersistenceController.DatabaseManager.getEntries()
+    var entries = PersistenceController.DatabaseManager.getEntries()
     var body: some View {
         VStack {
             Text("The word of the day is")
                 .font(.largeTitle)
                 .bold()
-//            Text(entries[120].kanji!)
-//                .font(.largeTitle)
-            //FlashCardView()
+            Text(entries[120].kanji!)
+                .font(.largeTitle)
+            FlashCardView()
             
         }
             .toolbar {

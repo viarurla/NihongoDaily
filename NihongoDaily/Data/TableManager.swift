@@ -21,6 +21,10 @@ struct TableManager {
     let kanaTable = Table("kana")
     let kanaTagsTable = Table("kana_tags")
     let kanaCommonTable = Table("kana_common")
+    let kanaAppliesToKanjiTable = Table("kana_applies_to_kanji")
+    
+    // Views
+    let entriesView = Table("entries_v")
     
     // Sense Tables
     let senseTable = Table("sense")
@@ -38,6 +42,11 @@ struct TableManager {
     let kanjiId = Expression<Int>("kanji_id")
     let kanaId = Expression<Int>("kana_id")
     let senseId = Expression<Int>("sense_id")
+    
+    let kanjiValue = Expression<String?>("kanji")
+    let kanaValue = Expression<String?>("kana")
+    let definitionValue = Expression<String?>("definition")
+    let miscValue = Expression<String?>("misc")
     
     let stringValue = Expression<String?>("value")
     let intValue = Expression<Int?>("value")

@@ -9,37 +9,44 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
+    @StateObject private var contentViewModel = ContentViewModel()
+
+    init() {
+        UINavigationBar.appearance().titleTextAttributes = [.font : UIFont.boldSystemFont(ofSize: 30)]
+    }
     
-    
-//    @FetchRequest(
-//        sortDescriptors: [NSSortDescriptor(keyPath: \Word.id, ascending: true)],
-//        animation: .default)
-//    private var words: FetchedResults<Word>
-    var entries = PersistenceController.DatabaseManager.getEntries()
     var body: some View {
-        VStack {
-            Text("The word of the day is")
-                .font(.largeTitle)
-                .bold()
-            Text(entries[120].kanji!)
-                .font(.largeTitle)
-            FlashCardView()
-            
-        }
+        NavigationView {
+            VStack {
+                FlashCardView(entry:$contentViewModel.currentEntry)
+                //EntryListView(entries:entries)
+                Button(action: {
+                    contentViewModel.getNewEntry()
+                }) {
+                    Text("New Word")
+                }
+                .buttonStyle(.borderedProminent)
+                .controlSize(.large)
+                .padding()
+                Spacer()
+            }
+            .navigationBarTitle("Word of the day", displayMode: .inline)
             .toolbar {
-                #if os(iOS)
-                EditButton()
-                #endif
-
+                ToolbarItem(placement: .bottomBar) {
+                    HStack {
+                        ToolbarButtonView(buttonName: "settings", state: $contentViewModel.showHomeView)
+                        ToolbarButtonView(buttonName: "about", state: $contentViewModel.showHomeView)
+                    }.sheet(isPresented: $contentViewModel.showHomeView) {
+                        AboutView()
+                    }
+                }
+            }
         }
-        }
+    }
     
-}
-
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+    struct ContentView_Previews: PreviewProvider {
+        static var previews: some View {
+            ContentView().preferredColorScheme(.dark).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        }
     }
 }

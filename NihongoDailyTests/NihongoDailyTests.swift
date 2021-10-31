@@ -21,7 +21,7 @@ class NihongoDailyTests: XCTestCase {
 
     func testExample() throws {
         let dbm = PersistenceController.DatabaseManager
-        let entries: [Entry] = dbm.getEntries()
+        let entries: [EntryViewModel] = dbm.entries
         print(entries.count)
         //print(senses.count)
     }

@@ -29,7 +29,6 @@ struct PersistenceController {
     
     static var DatabaseManager: DbManager = {
         var dbm = DbManager()
-        dbm.startup()
         return dbm
     }()
     

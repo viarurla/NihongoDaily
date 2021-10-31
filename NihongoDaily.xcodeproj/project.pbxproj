@@ -20,6 +20,12 @@
 		3D5326CA2713521F00090EB6 /* SQLite.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D5326C92713521F00090EB6 /* SQLite.xcframework */; };
 		3D5326CB2713521F00090EB6 /* SQLite.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3D5326C92713521F00090EB6 /* SQLite.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3D5326D127136D4C00090EB6 /* TableManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5326D027136D4C00090EB6 /* TableManager.swift */; };
+		3D5326D32715F9A900090EB6 /* EntryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5326D22715F9A800090EB6 /* EntryDetailView.swift */; };
+		3D5326D52718D66100090EB6 /* ToolbarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5326D42718D66000090EB6 /* ToolbarButtonView.swift */; };
+		3D58673F272C700300404E33 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D58673E272C700300404E33 /* SettingsView.swift */; };
+		3D844830272F25D00057591A /* EntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D84482F272F25D00057591A /* EntryViewModel.swift */; };
+		3D844835272F2FF10057591A /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D844834272F2FF10057591A /* ContentViewModel.swift */; };
+		3DB6C6252729BE51001E0DB5 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB6C6242729BE51001E0DB5 /* AboutView.swift */; };
 		3DCB11FE2710DF150053DA4C /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB11FD2710DF140053DA4C /* Entry.swift */; };
 		3DCB12002710E0660053DA4C /* DbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB11FF2710E0660053DA4C /* DbManager.swift */; };
 		3DCB12042711F9240053DA4C /* EntryListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB12032711F9240053DA4C /* EntryListItemView.swift */; };
@@ -78,6 +84,12 @@
 		3D5326C72713505300090EB6 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		3D5326C92713521F00090EB6 /* SQLite.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SQLite.xcframework; path = NihongoDaily/Carthage/Build/SQLite.xcframework; sourceTree = "<group>"; };
 		3D5326D027136D4C00090EB6 /* TableManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableManager.swift; sourceTree = "<group>"; };
+		3D5326D22715F9A800090EB6 /* EntryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailView.swift; sourceTree = "<group>"; };
+		3D5326D42718D66000090EB6 /* ToolbarButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarButtonView.swift; sourceTree = "<group>"; };
+		3D58673E272C700300404E33 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		3D84482F272F25D00057591A /* EntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewModel.swift; sourceTree = "<group>"; };
+		3D844834272F2FF10057591A /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		3DB6C6242729BE51001E0DB5 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		3DCB11FD2710DF140053DA4C /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		3DCB11FF2710E0660053DA4C /* DbManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbManager.swift; sourceTree = "<group>"; };
 		3DCB12032711F9240053DA4C /* EntryListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListItemView.swift; sourceTree = "<group>"; };
@@ -137,8 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				3DCB1223271241460053DA4C /* Data */,
-				3D1DF5F22704FF57007A3FC7 /* Protocols */,
 				3D0FD17B2704D4AB00ECED8A /* Models */,
+				3D844833272F2FA50057591A /* ViewModels */,
 				3D0FD1762704D3D300ECED8A /* Views */,
 				3D0FD1462704D38100ECED8A /* NihongoDailyApp.swift */,
 				3D0FD1482704D38100ECED8A /* ContentView.swift */,
@@ -180,9 +192,12 @@
 		3D0FD1762704D3D300ECED8A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3DB6C6232729BDE8001E0DB5 /* Pages */,
 				3D0FD1792704D45300ECED8A /* FlashCardView.swift */,
 				3DCB12032711F9240053DA4C /* EntryListItemView.swift */,
 				3DCB12052711FC7B0053DA4C /* EntryListView.swift */,
+				3D5326D22715F9A800090EB6 /* EntryDetailView.swift */,
+				3D5326D42718D66000090EB6 /* ToolbarButtonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -195,11 +210,22 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		3D1DF5F22704FF57007A3FC7 /* Protocols */ = {
+		3D844833272F2FA50057591A /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				3D84482F272F25D00057591A /* EntryViewModel.swift */,
+				3D844834272F2FF10057591A /* ContentViewModel.swift */,
 			);
-			path = Protocols;
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		3DB6C6232729BDE8001E0DB5 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				3DB6C6242729BE51001E0DB5 /* AboutView.swift */,
+				3D58673E272C700300404E33 /* SettingsView.swift */,
+			);
+			path = Pages;
 			sourceTree = "<group>";
 		};
 		3DC810682708A47500BA4E6B /* Frameworks */ = {
@@ -356,15 +382,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D5326D52718D66100090EB6 /* ToolbarButtonView.swift in Sources */,
 				3DCB12002710E0660053DA4C /* DbManager.swift in Sources */,
 				3DCB11FE2710DF150053DA4C /* Entry.swift in Sources */,
+				3D844835272F2FF10057591A /* ContentViewModel.swift in Sources */,
 				3DCB12042711F9240053DA4C /* EntryListItemView.swift in Sources */,
+				3DB6C6252729BE51001E0DB5 /* AboutView.swift in Sources */,
 				3D0FD1502704D38200ECED8A /* Persistence.swift in Sources */,
+				3D844830272F25D00057591A /* EntryViewModel.swift in Sources */,
 				3D5326D127136D4C00090EB6 /* TableManager.swift in Sources */,
+				3D58673F272C700300404E33 /* SettingsView.swift in Sources */,
 				3D0FD1492704D38100ECED8A /* ContentView.swift in Sources */,
 				3DCB12062711FC7C0053DA4C /* EntryListView.swift in Sources */,
 				3D15598F270A3FD2001632D8 /* NihongoDaily.xcdatamodeld in Sources */,
 				3D0FD1472704D38100ECED8A /* NihongoDailyApp.swift in Sources */,
+				3D5326D32715F9A900090EB6 /* EntryDetailView.swift in Sources */,
 				3D0FD17A2704D45300ECED8A /* FlashCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,7 +484,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -507,7 +539,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -527,7 +559,7 @@
 				DEVELOPMENT_TEAM = PU3UCL95VU;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NihongoDaily/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -549,7 +581,7 @@
 				DEVELOPMENT_TEAM = PU3UCL95VU;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NihongoDaily/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -569,7 +601,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PU3UCL95VU;
 				INFOPLIST_FILE = NihongoDailyTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -591,7 +623,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PU3UCL95VU;
 				INFOPLIST_FILE = NihongoDailyTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -612,6 +644,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PU3UCL95VU;
 				INFOPLIST_FILE = NihongoDailyUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -632,6 +665,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PU3UCL95VU;
 				INFOPLIST_FILE = NihongoDailyUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

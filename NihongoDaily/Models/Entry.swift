@@ -8,9 +8,9 @@
 import Foundation
 
 struct Entry : Identifiable {
-    
-    var id: Int?
-    var kanji: String?
-    var kana: String?
-    var definition: String?
+    var id: Int
+    var kanji: String
+    var kana: String
+    var definition: String
+    var misc: String
 }

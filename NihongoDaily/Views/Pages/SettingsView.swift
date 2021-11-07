@@ -10,19 +10,26 @@ import SwiftUI
 struct SettingsView: View {
     
     @Environment(\.dismiss) var dismiss
+    var settings: [String] = ["Filters", "About", "Misc"]
     
     var body: some View {
         
-        VStack {
-            Spacer()
-            Text("Well this is awkward, this isn't done yet...")
-            Spacer()
-            Button("Press to dismiss") {
-                dismiss()
+        NavigationView {
+            VStack {
+               Text("Well this is awkward, this isn't done yet...")
+//                List(settings, id: \.self) { entry in
+//                    NavigationLink(destination: AboutView()) {
+//                        Text(entry)
+//                    }
+//                }
+//                .listStyle(.inset)
+                Button("dismiss") {
+                    dismiss()
+                }
+                .font(.title)
+                .buttonStyle(.borderedProminent)
             }
-            .controlSize(.regular)
-            .font(.title)
-        .buttonStyle(.borderedProminent)
+            .navigationBarTitle("Settings")
         }
     }
 }

@@ -25,30 +25,32 @@ class DbManager : ObservableObject {
             
             database = db
             
-            getEntries()
+            setEntries()
             
         } catch {
             
         }
     }
-        private func getEntries() {
-            
-            do {
-                for row in try database!.prepare(tm.entriesView) {
-                    let entry: Entry = Entry(
+
+    private func setEntries() {
+        
+        do {
+            for row in try database!.prepare(tm.entriesView) {
+                let entry: Entry = Entry(
                     id: row[tm.entryId]
                     ,kanji: row[tm.kanjiValue] ?? ""
                     ,kana: row[tm.kanaValue] ?? ""
                     ,definition: row[tm.definitionValue] ?? ""
                     ,misc: row[tm.miscValue] ?? ""
-                    )
-                    entries.append(EntryViewModel(entry: entry))
-                }
-            } catch {
-                entries = []
+                )
+                entries.append(EntryViewModel(entry: entry))
             }
+        } catch {
+            // todo: Think of a better solution to this.
+            entries = []
         }
-        
-        
+    }
+    
+    
     
 }

@@ -16,6 +16,11 @@ struct PersistenceController {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
         
+        for i in 0...10 {
+            var record = HistoryRecord(context: viewContext)
+            record.entryId = 1000
+        }
+        
         do {
             try viewContext.save()
         } catch {

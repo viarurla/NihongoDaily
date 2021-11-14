@@ -74,6 +74,7 @@ public class EntryViewModel: Identifiable, Equatable {
         _entry = entry
     }
     
+    // Default entry initialiser, will think of a better solution at a later date.
     init() {
         _entry = Entry(id: 1003740, kanji: "", kana: "", definition: "", misc: "")
     }

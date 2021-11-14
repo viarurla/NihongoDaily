@@ -16,13 +16,15 @@ struct SettingsView: View {
         
         NavigationView {
             VStack {
-               Text("Well this is awkward, this isn't done yet...")
-//                List(settings, id: \.self) { entry in
-//                    NavigationLink(destination: AboutView()) {
-//                        Text(entry)
-//                    }
-//                }
-//                .listStyle(.inset)
+                Spacer()
+                Text("Well this is awkward, this isn't done yet...")
+                //                List(settings, id: \.self) { entry in
+                //                    NavigationLink(destination: AboutView()) {
+                //                        Text(entry)
+                //                    }
+                //                }
+                //                .listStyle(.inset)
+                Spacer()
                 Button("dismiss") {
                     dismiss()
                 }

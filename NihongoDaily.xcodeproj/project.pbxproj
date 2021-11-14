@@ -15,7 +15,6 @@
 		3D0FD1692704D38300ECED8A /* NihongoDailyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0FD1682704D38300ECED8A /* NihongoDailyUITests.swift */; };
 		3D0FD17A2704D45300ECED8A /* FlashCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0FD1792704D45300ECED8A /* FlashCardView.swift */; };
 		3D5326C82713505300090EB6 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 3D5326C72713505300090EB6 /* Cartfile */; };
-		3D5326CA2713521F00090EB6 /* SQLite.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D5326C92713521F00090EB6 /* SQLite.xcframework */; };
 		3D5326CB2713521F00090EB6 /* SQLite.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3D5326C92713521F00090EB6 /* SQLite.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3D5326D127136D4C00090EB6 /* TableManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5326D027136D4C00090EB6 /* TableManager.swift */; };
 		3D5326D32715F9A900090EB6 /* EntryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5326D22715F9A800090EB6 /* EntryDetailView.swift */; };
@@ -23,6 +22,8 @@
 		3D58673F272C700300404E33 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D58673E272C700300404E33 /* SettingsView.swift */; };
 		3D844830272F25D00057591A /* EntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D84482F272F25D00057591A /* EntryViewModel.swift */; };
 		3D844835272F2FF10057591A /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D844834272F2FF10057591A /* ContentViewModel.swift */; };
+		3D9198532741C2DF0005981B /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9198522741C2DF0005981B /* HistoryView.swift */; };
+		3DB2F78627418C3600A542CE /* SQLite.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D5326C92713521F00090EB6 /* SQLite.xcframework */; };
 		3DCB11FE2710DF150053DA4C /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB11FD2710DF140053DA4C /* Entry.swift */; };
 		3DCB12002710E0660053DA4C /* DbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB11FF2710E0660053DA4C /* DbManager.swift */; };
 		3DCB12042711F9240053DA4C /* EntryListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCB12032711F9240053DA4C /* EntryListItemView.swift */; };
@@ -85,6 +86,7 @@
 		3D58673E272C700300404E33 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		3D84482F272F25D00057591A /* EntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewModel.swift; sourceTree = "<group>"; };
 		3D844834272F2FF10057591A /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		3D9198522741C2DF0005981B /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		3DCB11FD2710DF140053DA4C /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		3DCB11FF2710E0660053DA4C /* DbManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbManager.swift; sourceTree = "<group>"; };
 		3DCB12032711F9240053DA4C /* EntryListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListItemView.swift; sourceTree = "<group>"; };
@@ -98,7 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D5326CA2713521F00090EB6 /* SQLite.xcframework in Frameworks */,
+				3DB2F78627418C3600A542CE /* SQLite.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				3D58673E272C700300404E33 /* SettingsView.swift */,
+				3D9198522741C2DF0005981B /* HistoryView.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				3DCB12042711F9240053DA4C /* EntryListItemView.swift in Sources */,
 				3D0FD1502704D38200ECED8A /* Persistence.swift in Sources */,
 				3D844830272F25D00057591A /* EntryViewModel.swift in Sources */,
+				3D9198532741C2DF0005981B /* HistoryView.swift in Sources */,
 				3D5326D127136D4C00090EB6 /* TableManager.swift in Sources */,
 				3DCCAD182735EBFE00433893 /* NihongoDaily.xcdatamodeld in Sources */,
 				3D58673F272C700300404E33 /* SettingsView.swift in Sources */,

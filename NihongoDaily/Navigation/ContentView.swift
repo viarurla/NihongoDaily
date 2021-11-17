@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreData
 
-struct NihongoDailyView: View {
+struct ContentView: View {
     @StateObject var contentViewModel = ContentViewModel(moc: PersistenceController.shared.container.viewContext)
 
     var body: some View {
@@ -37,9 +37,9 @@ struct NihongoDailyView: View {
         }
     }
     
-    struct NihongoDailyView_Previews: PreviewProvider {
+    struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
-            NihongoDailyView().preferredColorScheme(.dark)
+            ContentView().preferredColorScheme(.dark)
         }
     }
 }

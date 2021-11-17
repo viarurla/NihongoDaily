@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ToolbarButtonView: View {
+struct ToolbarButton: View {
     
     var buttonName: String?
     @Binding var state: Bool
@@ -30,6 +30,6 @@ struct ToolbarButtonView_Previews: PreviewProvider {
     @State static var testState = false
     
     static var previews: some View {
-        ToolbarButtonView(buttonName: "Hello there", state: $testState)
+        ToolbarButton(buttonName: "Hello there", state: $testState)
     }
 }

@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct FlashCardView: View {
+struct FlashCard: View {
     
-    @Binding var entry: EntryViewModel
+    @Binding var entry: Entry
     
     var body: some View {
         ZStack {
@@ -34,9 +34,9 @@ struct FlashCardView: View {
 
 struct FlashCardView_Previews: PreviewProvider {
 
-    @State static var entry: EntryViewModel = PersistenceController.DatabaseManager.entries[10]
+    @State static var entry: Entry = PersistenceController.DatabaseManager.entries[10]
     
     static var previews: some View {
-        FlashCardView(entry: $entry)
+        FlashCard(entry: $entry)
     }
 }

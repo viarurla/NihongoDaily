@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct EntryListItemView: View {
+struct EntryListItem: View {
     
 
     
-    let entry: EntryViewModel
+    let entry: Entry
     
     var body: some View {
         ZStack {
@@ -37,7 +37,7 @@ struct EntryListItemView: View {
 struct EntryListItemView_Previews: PreviewProvider {
     static var previews: some View {
         Group{
-            EntryListItemView(entry: PersistenceController.DatabaseManager.entries[10])
+            EntryListItem(entry: PersistenceController.DatabaseManager.entries[10])
         }.previewLayout(.fixed(width: 350, height: 180))
     }
 

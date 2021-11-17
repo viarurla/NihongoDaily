@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct EntryDetailView: View {
+struct EntryDetail: View {
         
-    @Binding var entry: EntryViewModel
+    @Binding var entry: Entry
     
     var body: some View {
         ZStack {
@@ -41,9 +41,9 @@ struct EntryDetailView: View {
 
 struct EntryDetailView_Previews: PreviewProvider {
     
-    @State static var entry: EntryViewModel = PersistenceController.DatabaseManager.entries[1234]
+    @State static var entry: Entry = PersistenceController.DatabaseManager.entries[1234]
 
     static var previews: some View {
-        EntryDetailView(entry: $entry)
+        EntryDetail(entry: $entry)
     }
 }

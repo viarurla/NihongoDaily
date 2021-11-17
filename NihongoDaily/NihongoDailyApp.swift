@@ -14,7 +14,7 @@ struct NihongoDailyApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NihongoDailyView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

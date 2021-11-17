@@ -14,7 +14,7 @@ class DbManager : ObservableObject {
     var database: Connection?
     let tm: TableManager = TableManager()
     
-    var entries: [EntryViewModel] = []
+    var entries: [Entry] = []
     
     init() {
         do {
@@ -43,7 +43,7 @@ class DbManager : ObservableObject {
                     ,definition: row[tm.definitionValue] ?? ""
                     ,misc: row[tm.miscValue] ?? ""
                 )
-                entries.append(EntryViewModel(entry: entry))
+                entries.append(entry)
             }
         } catch {
             // todo: Think of a better solution to this.

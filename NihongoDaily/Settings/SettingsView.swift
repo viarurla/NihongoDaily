@@ -10,20 +10,19 @@ import SwiftUI
 struct SettingsView: View {
     
     @Environment(\.dismiss) var dismiss
-    var settings: [String] = ["Filters", "About", "Misc"]
+    var settingsViewModel = SettingsViewModel()
     
     var body: some View {
         
         NavigationView {
             VStack {
                 Spacer()
-                Text("Well this is awkward, this isn't done yet...")
-                //                List(settings, id: \.self) { entry in
-                //                    NavigationLink(destination: AboutView()) {
-                //                        Text(entry)
-                //                    }
-                //                }
-                //                .listStyle(.inset)
+                List(settingsViewModel.settings, id: \.id) { entry in
+                    NavigationLink(destination: entry.view) {
+                        Text(entry.name)
+                    }
+                }
+                .listStyle(.inset)
                 Spacer()
                 Button("dismiss") {
                     dismiss()
@@ -31,13 +30,13 @@ struct SettingsView: View {
                 .font(.title)
                 .buttonStyle(.borderedProminent)
             }
-            .navigationBarTitle("Settings")
+            .navigationBarTitle("Settings").navigationBarTitleDisplayMode(.inline)
         }
     }
 }
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingsView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

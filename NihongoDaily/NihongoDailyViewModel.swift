@@ -11,7 +11,7 @@ import CoreData
 
 public class ContentViewModel: ObservableObject {
     @Published var showSettingsView: Bool = false
-    @Published var currentEntry: EntryViewModel = EntryViewModel()
+    @Published var currentEntry: Entry = Entry()
     
     @FetchRequest(entity: HistoryRecord.entity(), sortDescriptors: [
         NSSortDescriptor(keyPath: \HistoryRecord.recordDate, ascending: false)
@@ -29,7 +29,7 @@ public class ContentViewModel: ObservableObject {
             if (latestRecord!.recordDate! < Date()) {
                 getNewEntry()
             }
-            currentEntry = PersistenceController.DatabaseManager.entries.first(where: {$0.id == records.first!.entryId}) ?? EntryViewModel()
+            currentEntry = PersistenceController.DatabaseManager.entries.first(where: {$0.id == records.first!.entryId}) ?? Entry()
             
         } else {
             getNewEntry()

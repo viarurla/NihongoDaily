@@ -19,16 +19,18 @@ struct HistoryView: View {
     
     @FetchRequest(entity: HistoryRecord.entity(), sortDescriptors: [])
     var records: FetchedResults<HistoryRecord>
+    // todo: remove and put inside of a new viewmodel
+    var formatter = CommonFormatter()
     
     var body: some View {
         VStack {
             NavigationView {
                 List(records, id: \.self) { record in
                     HStack {
-                        Text((record.recordDate?.ISO8601Format())!)
+                        Text(formatter.formatDate(date: record.recordDate!))
                         Text("Entry ID: \(record.entryId)")
                     }
-                }.navigationTitle("History")
+                }.navigationTitle("History").navigationBarTitleDisplayMode(.inline)
             }
         }
     }

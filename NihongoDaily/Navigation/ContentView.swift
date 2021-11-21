@@ -9,37 +9,27 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @StateObject var contentViewModel = ContentViewModel(moc: PersistenceController.shared.container.viewContext)
-
+    
+    #if os(iOS)
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    @Environment(\.managedObjectContext) private var context
+    #endif
+    
     var body: some View {
-        NavigationView {
-            VStack {
-                FlashCard(entry: $contentViewModel.currentEntry)
-                EntryDetail(entry: $contentViewModel.currentEntry)
-            }
-            .navigationBarTitle("Word of the day", displayMode: .inline)
-            .toolbar {
-                ToolbarItem(placement: .bottomBar) {
-                    HStack {
-                        Button(action: {
-                            contentViewModel.getNewEntry()
-                        }) {
-                            Text("new word").font(.system(size: 18))
-                        }
-                        .buttonStyle(.bordered)
-                        ToolbarButton(buttonName: "settings", state: $contentViewModel.showSettingsView)
-                    }
-                    .sheet(isPresented: $contentViewModel.showSettingsView) {
-                        SettingsView().environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
-                    }
-                }
-            }
+        #if os(iOS)
+        if horizontalSizeClass == .compact {
+            AppTabNavigation().environment(\.managedObjectContext, context)
+        } else {
+            AppTabNavigation()
         }
+        #else
+        AppTabNavigation()
+        #endif
     }
     
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
-            ContentView().preferredColorScheme(.dark)
+            ContentView().environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
         }
     }
 }

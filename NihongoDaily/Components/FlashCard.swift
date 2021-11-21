@@ -19,16 +19,16 @@ struct FlashCard: View {
             
             VStack {
                 Text(entry.kana)
-                    .font(.headline).bold().padding()
-                Divider()
-                Text(entry.definition)
-                Text(entry.kanji)
-                Text(entry.misc)
+                    .font(.title).bold().padding()
+//                Divider()
+//                Text(entry.definition)
+//                Text(entry.kanji)
+//                Text(entry.misc)
             }.colorScheme(.light)
             .padding(10)
             .multilineTextAlignment(.center)
         }
-        .frame(width: 350, height: 250)
+        .frame(width: 350, height: 150)
     }
 }
 

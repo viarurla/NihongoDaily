@@ -24,14 +24,12 @@ struct HistoryView: View {
     
     var body: some View {
         VStack {
-            NavigationView {
                 List(records, id: \.self) { record in
                     HStack {
                         Text(formatter.formatDate(date: record.recordDate!))
                         Text("Entry ID: \(record.entryId)")
                     }
-                }.navigationTitle("History").navigationBarTitleDisplayMode(.inline)
-            }
+                }
         }
     }
 }

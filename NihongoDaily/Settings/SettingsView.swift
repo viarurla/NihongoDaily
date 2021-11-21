@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SettingsView: View {
     
-    @Environment(\.dismiss) var dismiss
     var settingsViewModel = SettingsViewModel()
     
     var body: some View {
@@ -24,13 +23,9 @@ struct SettingsView: View {
                 }
                 .listStyle(.inset)
                 Spacer()
-                Button("dismiss") {
-                    dismiss()
-                }
                 .font(.title)
                 .buttonStyle(.borderedProminent)
             }
-            .navigationBarTitle("Settings").navigationBarTitleDisplayMode(.inline)
         }
     }
 }

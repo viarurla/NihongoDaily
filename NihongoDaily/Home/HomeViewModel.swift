@@ -1,15 +1,15 @@
 //
-//  ContentViewModel.swift
+//  HomeViewModel.swift
 //  NihongoDaily
 //
-//  Created by Oli Jacobs on 31/10/2021.
+//  Created by Oliver Jacobs on 17/11/2021.
 //
 
 import Foundation
-import SwiftUI
 import CoreData
+import SwiftUI
 
-public class ContentViewModel: ObservableObject {
+public class HomeViewModel: ObservableObject {
     @Published var showSettingsView: Bool = false
     @Published var currentEntry: Entry = Entry()
     

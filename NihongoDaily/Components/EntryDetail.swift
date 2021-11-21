@@ -10,6 +10,7 @@ import SwiftUI
 struct EntryDetail: View {
         
     @Binding var entry: Entry
+    var columns = ["key", "value"]
     
     var body: some View {
         ZStack {
@@ -18,10 +19,14 @@ struct EntryDetail: View {
                 .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
             
             VStack {
-                Text(entry.kanji)
+                Text("Kanji").font(.subheadline)
+                ForEach(entry.kanjiList, id:\.self) { kanji in
+                    if !(entry.kanjiList.isEmpty) {
+                        Text(kanji)
+                    }
+                }
                 Text(entry.kana)
                 Text(entry.definition)
-                Text(entry.misc)
                 ForEach(entry.miscList, id:\.self) { misc in
                     if !(misc.isEmpty) {
                         Text(misc)
@@ -35,13 +40,13 @@ struct EntryDetail: View {
                 .padding(10)
                 .multilineTextAlignment(.center)
 
-        }.padding()
+        }.frame(width: 350)
     }
 }
 
-struct EntryDetailView_Previews: PreviewProvider {
+struct EntryDetail_Previews: PreviewProvider {
     
-    @State static var entry: Entry = PersistenceController.DatabaseManager.entries[1234]
+    @State static var entry: Entry = PersistenceController.DatabaseManager.entries.first(where: {$0.id == 1002220})!
 
     static var previews: some View {
         EntryDetail(entry: $entry)
